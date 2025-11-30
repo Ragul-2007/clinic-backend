@@ -1,20 +1,18 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const appointmentSchema = new mongoose.Schema(
   {
     name: String,
-    age: Number,
     gender: String,
     phone: String,
     email: String,
-
     medicalCondition: String,
 
-    appointmentDate: Date,
+    // Must remain strings to avoid timezone conversion
+    appointmentDate: String,
     appointmentTime: String,
 
-    tokenNumber: Number,
-    notes: String
+    tokenNumber: String
   },
   { timestamps: true }
 );
